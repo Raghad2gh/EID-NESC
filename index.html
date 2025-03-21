@@ -29,7 +29,7 @@
         }
 
         input {
-            font-size: 30px; /* 🔠 تكبير خط الإدخال */
+            font-size: 30px;
             padding: 15px;
             text-align: center;
             border-radius: 10px;
@@ -39,7 +39,7 @@
         button {
             background: gold;
             color: #2f1241;
-            font-size: 28px; /* 🔠 تكبير الأزرار */
+            font-size: 28px;
             padding: 15px 30px;
             border: none;
             cursor: pointer;
@@ -96,11 +96,6 @@
 
     <!-- صورة المعايدة -->
     <canvas id="eidCanvas"></canvas>
-
-    <!-- زر تحميل الصورة -->
-    <button id="downloadBtn" onclick="downloadImage()" style="display: none; background: green; color: white; padding: 15px 25px; border: none; border-radius: 10px; font-size: 28px; cursor: pointer;">
-        تحميل الصورة 📥
-    </button>
 
     <script>
         let userName = "";
@@ -179,20 +174,7 @@
 
                 document.getElementById("page2").style.display = "none";
                 canvas.style.display = "block";
-
-                // إظهار زر التحميل
-                document.getElementById("downloadBtn").style.display = "block";
             };
-        }
-
-        function downloadImage() {
-            let canvas = document.getElementById("eidCanvas");
-            let link = document.createElement("a");
-            link.download = "eid_card.png";
-            link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
         }
     </script>
 
